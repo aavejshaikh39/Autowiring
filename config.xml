@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:context="http://www.springframework.org/schema/context"
+         xmlns:p="http://www.springframework.org/schema/p"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd">
+         
+<!-- byName= "In such case, property name and bean name must be same. It internally calls setter method". -->
+         
+			<!-- <bean  class="com.autowiring.Address" name="address">
+				<property name="city" value="Baramati"/>
+				<property name="state" value="MH"/>
+				<property name="country" value="INDIA"/>
+			 </bean>
+				         
+			
+		    <bean class="com.autowiring.student" name="studBean1" autowire="byName">
+				         <property name="roll" value="12182" />
+				         <property name="name" value="Aavej Shaikh" />
+			</bean> -->
+<!-- ________________________________________________________________________________________________________________________-->			
+			
+<!-- byType="object dependency according to type. So property name and bean name can be different. It internally calls setter method." -->
+			
+			<!-- <bean  class="com.autowiring.Address">
+				<property name="city" value="Baramati"/>
+				<property name="state" value="MH"/>
+				<property name="country" value="INDIA"/>
+			 </bean>
+				         
+			
+			
+		    <bean class="com.autowiring.student" name="studBean1" autowire="byType">
+				         <property name="roll" value="12182" />
+				         <property name="name" value="Aavej Shaikh" />
+			</bean>  -->
+<!-- ________________________________________________________________________________________________________________________________ -->			
+			
+<!-- dependency by calling the constructor of the class. It calls the constructor having large number of parameters. -->		
+	
+	
+			<bean class="com.autowiring.student" name="studBean1" autowire="constructor">
+				         <constructor-arg name="roll" value="12183" />
+				         <constructor-arg name="name" value="Aavej Shaikh" />
+			</bean>
+			
+			 <bean  class="com.autowiring.Address" name="address">
+				<constructor-arg name="city" value="Baramati"/>
+				<constructor-arg name="state" value="MH"/>
+				<constructor-arg name="country" value="INDIA"/>
+			 </bean>    
+			
+		    
+</beans>
